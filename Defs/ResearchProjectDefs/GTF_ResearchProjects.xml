@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ResearchProjectDef>
+		<defName>GTF_FishingNetBasic</defName>
+		<label>Basic Fishing Nets</label>
+		<description>Construct basic fishing nets out of wood and cloth to catch fish in shallow water.</description>
+		<baseCost>300</baseCost>
+		<techLevel>Neolithic</techLevel>
+		<tags>
+			<li>TribalStart</li>
+		</tags>
+		<researchViewX>0</researchViewX>
+		<researchViewY>5</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>GTF_FishingNetComplex</defName>
+		<label>Complex Fishing Nets</label>
+		<description>Construct complex fishing nets out of metal and cloth to catch fish in shallow or chest deep water.</description>
+		<baseCost>500</baseCost>
+		<techLevel>Medieval</techLevel>
+		<prerequisites>
+			<li>GTF_FishingNetBasic</li>
+		</prerequisites>
+		<researchViewX>1</researchViewX>
+		<researchViewY>5</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>GTF_FishingNetAdvanced</defName>
+		<label>Advanced Fishing Nets</label>
+		<description>Construct advanced fishing nets, equipped with sensors and electronic lures, in deeper water.</description>
+		<baseCost>800</baseCost>
+		<techLevel>Industrial</techLevel>
+		<prerequisites>
+			<li>GTF_FishingNetComplex</li>
+			<li>MicroelectronicsBasics</li>
+		</prerequisites>
+		<researchViewX>9</researchViewX>
+		<researchViewY>5</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>GTF_FishingNetIce</defName>
+		<label>Ice Fishing</label>
+		<description>Construct fishing nets designed to catch fish under the ice.</description>
+		<baseCost>500</baseCost>
+		<techLevel>Medieval</techLevel>
+		<prerequisites>
+			<li>GTF_FishingNetBasic</li>
+		</prerequisites>
+		<tags>
+			<li>TribalStart</li>
+		</tags>
+		<researchViewX>1</researchViewX>
+		<researchViewY>4.5</researchViewY>
+	</ResearchProjectDef>
+
+</Defs>

@@ -1,0 +1,4 @@
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\FishingNets\Assemblies\GT_ExplicitTerrainAffordance.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\FishingNets\Source\GTU_Processor\GT_ExplicitTerrainAffordance\obj\Debug\GT_ExplicitTerrainAffordance.csprojAssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\FishingNets\Source\GTU_Processor\GT_ExplicitTerrainAffordance\obj\Debug\GT_ExplicitTerrainAffordance.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\FishingNets\Source\GTU_Processor\GT_ExplicitTerrainAffordance\obj\Debug\GT_ExplicitTerrainAffordance.dll

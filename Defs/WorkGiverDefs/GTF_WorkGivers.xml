@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<WorkGiverDef>
+		<defName>EmptyGTProcessor</defName>
+		<label>empty processor</label>
+		<giverClass>GTU_Processor.WorkGiver_EmptyProcessor</giverClass>
+		<workType>Hauling</workType>
+		<verb>empty fishing net</verb>
+		<gerund>emptying from</gerund>
+		<priorityInType>20</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</WorkGiverDef>
+
+	<WorkGiverDef>
+		<defName>FillGTProcessor</defName>
+		<label>fill processor</label>
+		<giverClass>GTU_Processor.WorkGiver_FillProcessor</giverClass>
+		<workType>Hauling</workType>
+		<verb>fill</verb>
+		<gerund>filling</gerund>
+		<priorityInType>19</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</WorkGiverDef>
+
+</Defs>

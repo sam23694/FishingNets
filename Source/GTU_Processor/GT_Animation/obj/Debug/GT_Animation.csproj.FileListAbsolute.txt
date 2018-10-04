@@ -1,0 +1,4 @@
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\FishingNets\Assemblies\GT_Animation.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\FishingNets\Source\GTU_Processor\GT_Animation\obj\Debug\GT_Animation.csprojAssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\FishingNets\Source\GTU_Processor\GT_Animation\obj\Debug\GT_Animation.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\FishingNets\Source\GTU_Processor\GT_Animation\obj\Debug\GT_Animation.dll

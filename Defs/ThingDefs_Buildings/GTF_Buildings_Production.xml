@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!--				Fishing nets				-->
+
+	<ThingDef Name="GTF_FishingNetBase" Abstract="True">
+		<category>Building</category>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<altitudeLayer>Building</altitudeLayer>
+		<fillPercent>0.45</fillPercent>
+		<rotatable>false</rotatable>
+		<useHitPoints>True</useHitPoints>
+		<tickerType>Rare</tickerType>	
+		<selectable>true</selectable>
+		<passability>PassThroughOnly</passability>
+		<pathCost>60</pathCost>
+		<designationCategory>Production</designationCategory>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<statBases>
+			<Mass>10</Mass>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<constructEffect>ConstructWood</constructEffect>
+		<soundImpactDefault>BulletImpact_Wood</soundImpactDefault>
+		<filthLeaving>Filth_RubbleBuilding</filthLeaving>
+		<repairEffect>Repair</repairEffect>
+	</ThingDef>
+
+	<ThingDef ParentName="GTF_FishingNetBase">
+		<defName>GTF_FishingNetBasic</defName>
+		<label>simple fishing net</label>
+		<description>A simple wooden fishing net for catching fish in shallow water. Not very strong and prone to breaking.</description>
+		<graphicData>
+			<texPath>Things/Building/Production/GTF_FishingNetBasic</texPath>
+			<shadowData>
+				<volume>(0.75, 0.35, 0.33)</volume>
+			</shadowData>
+		</graphicData>
+		<statBases>
+			<WorkToBuild>200</WorkToBuild>
+		</statBases>
+		<costList>
+			<WoodLog>20</WoodLog>
+			<Cloth>10</Cloth>
+		</costList>
+		<comps>
+			<li Class="GTU_Processor.CompProperties_GTProcessor">
+				<!--<thingIngredient></thingIngredient>-->
+				<thingResult>GTF_FishShallow</thingResult>
+				<!--<ingredientCount></ingredientCount>-->
+				<resultCount>5</resultCount>
+				<spawnOnFloor>false</spawnOnFloor>
+				<!--<spawnMaxAdjacent></spawnMaxAdjacent>-->
+				<!--<spawnForbidden>false</spawnForbidden>-->
+				<!--<requiresPower>true</requiresPower>-->
+				<!--<showMessageIfOwned>true</showMessageIfOwned>-->
+				<durationIntervalRange>
+					<min>240000</min>
+					<max>360000</max>
+				</durationIntervalRange>
+			</li>
+			<li Class="GTU_Processor.CompProperties_GTLifespan">
+				<killAtEnd>true</killAtEnd>
+				<showMessageIfOwned>true</showMessageIfOwned>
+				<expiredMessage>A fish net has broken.</expiredMessage>
+				<!--<writeTimeLeft>true</writeTimeLeft>-->
+				<!--<endVerb>Expires</endVerb>-->
+				<lifetimeRange>
+					<min>98000</min>
+					<max>175000</max>
+				</lifetimeRange>
+			</li>
+		</comps>
+		<terrainAffordanceNeeded>ShallowWater</terrainAffordanceNeeded>
+		<researchPrerequisites>
+			<li>GTF_FishingNetBasic</li>
+		</researchPrerequisites>
+	</ThingDef>
+
+	<ThingDef ParentName="GTF_FishingNetBase">
+		<defName>GTF_FishingNetComplex</defName>
+		<label>complex fishing net</label>
+		<description>A complex fishing net for catching fish in shallow water and chest deep water. More durable and better at trapping fish.</description>
+		<graphicData>
+			<texPath>Things/Building/Production/GTF_FishingNetComplex</texPath>
+			<shadowData>
+				<volume>(0.75, 0.35, 0.33)</volume>
+			</shadowData>
+		</graphicData>
+		<statBases>
+			<WorkToBuild>350</WorkToBuild>
+		</statBases>
+		<costList>
+			<Steel>20</Steel>
+			<WoodLog>8</WoodLog>
+			<Cloth>10</Cloth>
+		</costList>
+		<comps>
+			<li Class="GTU_Processor.CompProperties_GTProcessor">
+				<thingResult>GTF_FishShallow</thingResult>
+				<resultCount>5</resultCount>
+				<spawnOnFloor>false</spawnOnFloor>
+				<durationIntervalRange>
+					<min>75000</min>
+					<max>160000</max>
+				</durationIntervalRange>
+			</li>
+			<li Class="GTU_Processor.CompProperties_GTLifespan">
+				<killAtEnd>true</killAtEnd>
+				<showMessageIfOwned>true</showMessageIfOwned>
+				<expiredMessage>A fish net has broken.</expiredMessage>
+				<lifetimeRange>
+					<min>600000</min>
+					<max>900000</max>
+				</lifetimeRange>
+			</li>
+			<li Class="GT_ExplicitTerrainAffordance.CompProperties_GTExplicitTerrainAffordance">
+				<requiredTerrains>
+					<li>WaterMovingChestDeep</li>
+				</requiredTerrains>
+				<requiredAffordances>
+					<li>ShallowWater</li>
+				</requiredAffordances>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>GT_ExplicitTerrainAffordance.PlaceWorker_ExplicitAffordance</li>
+		</placeWorkers>
+		<researchPrerequisites>
+			<li>GTF_FishingNetComplex</li>
+		</researchPrerequisites>
+	</ThingDef>
+
+	<ThingDef ParentName="GTF_FishingNetBase">
+		<defName>GTF_FishingNetAdvanced</defName>
+		<label>advanced fishing net</label>
+		<description>An advanced fishing net for catching large amounts of fish in deeper water. More durable and equipped with sensors and electronic lures.</description>
+		<graphicData>
+			<texPath>Things/Building/Production/GTF_FishingNetAdvanced</texPath>
+		</graphicData>
+		<castEdgeShadows>false</castEdgeShadows>
+		<statBases>
+			<WorkToBuild>500</WorkToBuild>
+		</statBases>
+		<costList>
+			<Steel>30</Steel>
+			<ComponentIndustrial>3</ComponentIndustrial>
+			<Cloth>10</Cloth>
+		</costList>
+		<comps>
+			<li Class="GTU_Processor.CompProperties_GTProcessor">
+				<thingResult>GTF_FishShallow</thingResult>
+				<resultCount>5</resultCount>
+				<spawnOnFloor>false</spawnOnFloor>
+				<durationIntervalRange>
+					<min>55000</min>
+					<max>140000</max>
+				</durationIntervalRange>
+			</li>
+			<li Class="GTU_Processor.CompProperties_GTLifespan">
+				<killAtEnd>true</killAtEnd>
+				<showMessageIfOwned>true</showMessageIfOwned>
+				<expiredMessage>A fish net has broken.</expiredMessage>
+				<lifetimeRange>
+					<min>1200000</min>
+					<max>2800000</max>
+				</lifetimeRange>
+			</li>
+			<li Class="GT_ExplicitTerrainAffordance.CompProperties_GTExplicitTerrainAffordance">
+				<requiredTerrains>
+					<li>WaterMovingChestDeep</li>
+					<li>WaterDeep</li>
+					<li>WaterOceanDeep</li>
+				</requiredTerrains>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>GT_ExplicitTerrainAffordance.PlaceWorker_ExplicitAffordance</li>
+		</placeWorkers>
+		<researchPrerequisites>
+			<li>GTF_FishingNetAdvanced</li>
+		</researchPrerequisites>
+	</ThingDef>
+	
+	<ThingDef ParentName="GTF_FishingNetBase">
+		<defName>GTF_FishingNetIce</defName>
+		<label>ice fishing net</label>
+		<description>A unique fishing net designed to catch fish under the ice.</description>
+		<graphicData>
+			<texPath>Things/Building/Production/GTF_FishingNetIce</texPath>
+		</graphicData>
+		<castEdgeShadows>false</castEdgeShadows>
+		<statBases>
+			<WorkToBuild>600</WorkToBuild>
+		</statBases>
+		<costList>
+			<WoodLog>45</WoodLog>
+			<Cloth>15</Cloth>
+		</costList>
+		<comps>
+			<li Class="GTU_Processor.CompProperties_GTProcessor">
+				<thingResult>GTF_FishShallow</thingResult>
+				<resultCount>3</resultCount>
+				<spawnOnFloor>false</spawnOnFloor>
+				<durationIntervalRange>
+					<min>90000</min>
+					<max>160000</max>
+				</durationIntervalRange>
+			</li>
+			<li Class="GTU_Processor.CompProperties_GTLifespan">
+				<killAtEnd>true</killAtEnd>
+				<showMessageIfOwned>true</showMessageIfOwned>
+				<expiredMessage>A fish net has broken.</expiredMessage>
+				<lifetimeRange>
+					<min>150000</min>
+					<max>600000</max>
+				</lifetimeRange>
+			</li>
+			<li Class="GT_ExplicitTerrainAffordance.CompProperties_GTExplicitTerrainAffordance">
+				<requiredTerrains>
+					<li>Ice</li>
+				</requiredTerrains>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>GT_ExplicitTerrainAffordance.PlaceWorker_ExplicitAffordance</li>
+		</placeWorkers>
+		<researchPrerequisites>
+			<li>GTF_FishingNetIce</li>
+		</researchPrerequisites>
+	</ThingDef>
+	
+	<!--OceanFishingNet-->
+
+</Defs>

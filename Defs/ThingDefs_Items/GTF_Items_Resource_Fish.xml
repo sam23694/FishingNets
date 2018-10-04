@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef Name="GTF_FishBase" Abstract="true" ParentName="ResourceBase">
+		<graphicData>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<statBases>
+			<MarketValue>2</MarketValue>
+			<Mass>0.03</Mass>
+			<MaxHitPoints>60</MaxHitPoints>
+			<Flammability>0.5</Flammability>
+			<Nutrition>0.05</Nutrition>
+			<DeteriorationRate>6</DeteriorationRate>
+			<FoodPoisonChanceFixedHuman>0.02</FoodPoisonChanceFixedHuman>
+		</statBases>
+		<tickerType>Rare</tickerType>
+		<comps>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>2</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+		</comps>
+		<ingestible>
+			<foodType>Meat</foodType>
+			<preferability>RawBad</preferability>
+			<tasteThought>AteRawFood</tasteThought>
+			<ingestSound>RawMeat_Eat</ingestSound>
+			<ingestEffect>EatMeat</ingestEffect>
+		</ingestible>
+		<thingCategories>
+			<li>MeatRaw</li>
+		</thingCategories>
+	</ThingDef>
+	
+	<ThingDef ParentName="GTF_FishBase">
+		<defName>GTF_FishShallow</defName>
+		<label>Fish</label>
+		<description>Raw fish.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/MeatFoodRaw/GT_FishShallow</texPath>
+		</graphicData>
+	</ThingDef>
+
+</Defs>
