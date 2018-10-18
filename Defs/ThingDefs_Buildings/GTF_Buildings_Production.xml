@@ -63,8 +63,8 @@
 				<!--<requiresPower>true</requiresPower>-->
 				<!--<showMessageIfOwned>true</showMessageIfOwned>-->
 				<durationIntervalRange>
-					<min>240000</min>
-					<max>360000</max>
+					<min>98000</min>
+					<max>175000</max>
 				</durationIntervalRange>
 			</li>
 			<li Class="GTU_Processor.CompProperties_GTLifespan">
@@ -74,8 +74,8 @@
 				<!--<writeTimeLeft>true</writeTimeLeft>-->
 				<!--<endVerb>Expires</endVerb>-->
 				<lifetimeRange>
-					<min>98000</min>
-					<max>175000</max>
+					<min>240000</min>
+					<max>360000</max>
 				</lifetimeRange>
 			</li>
 		</comps>
